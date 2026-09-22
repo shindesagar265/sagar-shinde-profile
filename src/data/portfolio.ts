@@ -16,7 +16,10 @@ export const profile = {
   email: 'shindesagar265@gmail.com',
   linkedin: 'https://linkedin.com/in/sagar-shinde-095a6117/',
   github: 'https://github.com/shindesagar265',
-  resume: './Sagar-Shinde-Resume-PLACEHOLDER.txt',
+  resume: './Sagar-Shinde-CV.pdf',
+  resumeUpdated: 'September 2026',
+  photo: './sagar-shinde-profile.jpg',
+  portfolioUrl: 'https://shindesagar265.github.io/sagar-shinde-profile/',
 } as const;
 
 export const achievements: Achievement[] = [

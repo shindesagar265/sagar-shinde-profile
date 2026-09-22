@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "generate:qr": "node scripts/generate-qr.mjs",
     "lint": "eslint .",
     "typecheck": "tsc -b --pretty false",
     "preview": "vite preview"
@@ -28,6 +29,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "globals": "^16.4.0",
     "postcss": "^8.5.6",
+    "qrcode": "^1.5.4",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.44.0",

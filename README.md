@@ -39,14 +39,20 @@ The supplied email, LinkedIn profile, GitHub profile, experience, skills, and ca
 
 The project intentionally avoids unsupported dates, project metrics, repository claims, and confidential client details.
 
-## Resume replacement
+## Resume updates
 
-`public/Sagar-Shinde-Resume-PLACEHOLDER.txt` is deliberately marked as a placeholder.
+The published CV is `public/Sagar-Shinde-CV.pdf`, and every download action reads its path from `profile.resume` in `src/data/portfolio.ts`.
 
-1. Export the approved resume as `public/Sagar-Shinde-Resume.pdf`.
-2. Change `profile.resume` in `src/data/portfolio.ts` to `./Sagar-Shinde-Resume.pdf`.
-3. Remove the placeholder text document.
-4. Run the full quality checks again.
+1. Export the approved public CV using the same `Sagar-Shinde-CV.pdf` filename.
+2. Replace the existing file in `public/`.
+3. Update `profile.resumeUpdated` when appropriate.
+4. Run the full quality checks and push to `main`.
+
+The CV is publicly accessible. Remove private addresses, identification numbers, references, signatures, and any other information that should not be indexed or downloaded publicly.
+
+## QR codes
+
+Run `npm run generate:qr` after changing the portfolio or LinkedIn URL. This regenerates privacy-safe static SVG codes in `public/` without using an external QR service.
 
 ## SEO and social metadata
 

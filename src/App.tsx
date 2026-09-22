@@ -25,6 +25,7 @@ import {
   MapPin,
   Network,
   Quote,
+  QrCode,
   Route,
   ShieldCheck,
   Sparkles,
@@ -89,6 +90,12 @@ function App() {
                 <span><MapPin aria-hidden="true" size={16} />Hong Kong · Open to global conversations</span>
                 <a href={`mailto:${profile.email}`}><Mail aria-hidden="true" size={16} />Start a conversation</a>
               </div>
+              <dl className="hero-impact" aria-label="Professional profile highlights">
+                <div><dt>15+</dt><dd>Years of experience</dd></div>
+                <div><dt>Azure + AWS</dt><dd>Cloud platforms</dd></div>
+                <div><dt>Data + AI</dt><dd>Engineering focus</dd></div>
+                <div><dt>Hong Kong</dt><dd>Global delivery</dd></div>
+              </dl>
             </motion.div>
             <motion.div
               className="hero-art"
@@ -97,6 +104,10 @@ function App() {
               transition={{ duration: 0.7, delay: 0.15 }}
             >
               <CloudVisual />
+              <figure className="profile-portrait">
+                <img src={profile.photo} width="640" height="820" alt="Sagar Shinde, Senior Data Engineer" fetchPriority="high" />
+                <figcaption><strong>Sagar Shinde</strong><span>Data · Cloud · AI</span></figcaption>
+              </figure>
               <div className="status-pill"><span /> Available for impactful data challenges</div>
             </motion.div>
           </div>
@@ -285,7 +296,7 @@ function App() {
 
         <section className="section-shell contact-section" id="contact" aria-labelledby="contact-title">
           <div className="contact-mesh" aria-hidden="true" />
-          <div className="container-narrow contact-content">
+          <div className="container-wide contact-content">
             <Reveal>
               <span className="eyebrow"><Mail aria-hidden="true" size={15} />Start a conversation</span>
               <h2 id="contact-title">Let’s build data foundations that last.</h2>
@@ -295,7 +306,28 @@ function App() {
                 <a className="button button-outline-light" href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" size={18} />Connect on LinkedIn<ExternalLink aria-hidden="true" size={14} /></a>
                 <a className="button button-outline-light" href={profile.github} target="_blank" rel="noreferrer"><Github aria-hidden="true" size={18} />View GitHub<ExternalLink aria-hidden="true" size={14} /></a>
               </div>
-              <a className="button button-outline-light" href={profile.resume} download><Download aria-hidden="true" size={18} />Download resume</a>
+              <div className="resume-download">
+                <a className="button button-outline-light" href={profile.resume} download><Download aria-hidden="true" size={18} />Download CV</a>
+                <span>PDF · Updated {profile.resumeUpdated}</span>
+              </div>
+              <div className="qr-panel">
+                <div className="qr-panel-heading">
+                  <span className="eyebrow"><QrCode aria-hidden="true" size={15} />Connect anywhere</span>
+                  <p>Scan to continue on another device, or select a card to open the destination.</p>
+                </div>
+                <div className="qr-grid">
+                  <a className="qr-card" href={profile.portfolioUrl} target="_blank" rel="noreferrer" aria-label="Open Sagar Shinde's portfolio">
+                    <span className="qr-image"><img src="./qr-portfolio.svg" width="164" height="164" loading="lazy" alt="QR code for Sagar Shinde's portfolio" /></span>
+                    <span><strong>Open portfolio</strong><small>Share this profile</small></span>
+                    <ExternalLink aria-hidden="true" size={17} />
+                  </a>
+                  <a className="qr-card" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="Open Sagar Shinde's LinkedIn profile">
+                    <span className="qr-image"><img src="./qr-linkedin.svg" width="164" height="164" loading="lazy" alt="QR code for Sagar Shinde's LinkedIn profile" /></span>
+                    <span><strong>Connect on LinkedIn</strong><small>View professional profile</small></span>
+                    <Linkedin aria-hidden="true" size={18} />
+                  </a>
+                </div>
+              </div>
             </Reveal>
           </div>
         </section>
