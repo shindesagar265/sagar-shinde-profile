@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shindesagar265.github.io/sitemap.xml
+Sitemap: https://shindesagar265.github.io/sagar-shinde-profile/sitemap.xml

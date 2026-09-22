@@ -50,7 +50,7 @@ The project intentionally avoids unsupported dates, project metrics, repository 
 
 ## SEO and social metadata
 
-Canonical metadata currently targets `https://shindesagar265.github.io/`, suitable for the GitHub user-site repository named `shindesagar265.github.io`. If publishing from a project repository or custom domain, update the canonical URLs in:
+Canonical metadata targets the project site at `https://shindesagar265.github.io/sagar-shinde-profile/`. If publishing from another repository or a custom domain, update the canonical URLs in:
 
 - `index.html`
 - `public/robots.txt`
@@ -62,10 +62,10 @@ If the deployed URL differs from the current placeholder, also update the JSON-L
 
 1. Create the GitHub repository and push the project to its `main` branch.
 2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
-3. Confirm the canonical URLs described above.
+3. Confirm the repository is named `sagar-shinde-profile` and the canonical URLs described above are correct.
 4. Push to `main` or run **Deploy portfolio to GitHub Pages** manually.
 
-The workflow installs locked dependencies, lints, builds, uploads `dist/`, and deploys through the official Pages action. Vite uses `base: './'`, so assets resolve from a repository subpath without hard-coding a repository name.
+The workflow installs locked dependencies, lints, builds, uploads `dist/`, and deploys through the official Pages action. Vite uses `base: '/sagar-shinde-profile/'` so assets resolve from the GitHub Pages project path.
 
 ## Accessibility and performance notes
 
