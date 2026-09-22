@@ -312,7 +312,7 @@ function App() {
                 <a className="button button-outline-light" href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" size={18} />Connect on LinkedIn<ExternalLink aria-hidden="true" size={14} /></a>
               </div>
               <div className="resume-download">
-                <a className="button button-outline-light" href={profile.resume} download><Download aria-hidden="true" size={18} />Download CV</a>
+                <a className="button button-outline-light" href={profile.resume} download><Download aria-hidden="true" size={18} />Download resume</a>
                 <span>PDF · Updated {profile.resumeUpdated}</span>
               </div>
               <div className="qr-panel">
