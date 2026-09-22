@@ -103,11 +103,7 @@ function App() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.15 }}
             >
-              <CloudVisual />
-              <figure className="profile-portrait">
-                <img src={profile.photo} width="640" height="820" alt="Sagar Shinde, Senior Data Engineer" fetchPriority="high" />
-                <figcaption><strong>Sagar Shinde</strong><span>Data · Cloud · AI</span></figcaption>
-              </figure>
+              <CloudVisual photo={profile.photo} />
               <div className="status-pill"><span /> Available for impactful data challenges</div>
             </motion.div>
           </div>
