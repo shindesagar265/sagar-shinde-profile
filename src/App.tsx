@@ -93,6 +93,13 @@ function App() {
                 <span><MapPin aria-hidden="true" size={16} />Hong Kong · Open to global conversations</span>
                 <a href={`mailto:${profile.email}`}><Mail aria-hidden="true" size={16} />Start a conversation</a>
               </div>
+              <nav className="profile-links" aria-label="Professional profiles">
+                <a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" size={15} />LinkedIn</a>
+                <a href={profile.medium} target="_blank" rel="noreferrer"><BookOpen aria-hidden="true" size={15} />Medium</a>
+                <a href={profile.substack} target="_blank" rel="noreferrer"><Send aria-hidden="true" size={15} />Substack</a>
+                <a href={profile.credly} target="_blank" rel="noreferrer"><BadgeCheck aria-hidden="true" size={15} />Credly</a>
+                <a href={profile.github} target="_blank" rel="noreferrer"><Github aria-hidden="true" size={15} />GitHub</a>
+              </nav>
               <dl className="hero-impact" aria-label="Professional profile highlights">
                 <div><dt>15+</dt><dd>Years of experience</dd></div>
                 <div><dt>Azure + AWS</dt><dd>Cloud platforms</dd></div>

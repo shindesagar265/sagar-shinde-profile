@@ -101,6 +101,9 @@ button { font: inherit; }
 .hero-meta { display: flex; flex-wrap: wrap; gap: 15px 24px; margin-top: 27px; color: var(--muted); font-size: 12px; }
 .hero-meta span, .hero-meta a { display: inline-flex; align-items: center; gap: 7px; }
 .hero-meta a:hover { color: var(--azure); }
+.profile-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.profile-links a { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 10px; border: 1px solid var(--line); border-radius: 9px; color: var(--muted); background: var(--bg-elevated); font-size: 10px; font-weight: 750; transition: color 160ms ease, border-color 160ms ease, background 160ms ease, transform 160ms ease; }
+.profile-links a:hover { color: var(--azure); border-color: var(--line-strong); background: var(--azure-soft); transform: translateY(-1px); }
 .hero-impact { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 31px 0 0; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--line); }
 .hero-impact div { min-width: 0; padding: 14px 12px; background: color-mix(in srgb, var(--surface) 88%, transparent); }
 .hero-impact dt { color: var(--text); font-family: Manrope, sans-serif; font-size: 13px; font-weight: 800; white-space: nowrap; }
@@ -385,7 +388,7 @@ button { font: inherit; }
 }
 
 @media (hover: none) {
-  .button:hover, .article-card:hover, .qr-card:hover, .icon-button:hover { transform: none; }
+  .button:hover, .article-card:hover, .qr-card:hover, .icon-button:hover, .profile-links a:hover { transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
