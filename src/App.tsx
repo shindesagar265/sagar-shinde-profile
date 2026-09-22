@@ -80,13 +80,12 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65 }}
             >
-              <span className="eyebrow"><Sparkles aria-hidden="true" size={15} />Engineering trusted data at enterprise scale</span>
+              <span className="eyebrow"><Sparkles aria-hidden="true" size={15} />Modernizing complex data estates for cloud and AI</span>
               <h1 id="hero-title">Sagar Shinde</h1>
               <p className="hero-role">Senior Data Engineer <span aria-hidden="true">·</span> Hong Kong</p>
-              <p className="hero-statement">Transforming enterprise data into <strong>scalable cloud platforms</strong> through Azure, Databricks, AI, and modern Data Engineering practices.</p>
+              <p className="hero-statement">Building <strong>secure, scalable data platforms</strong> across cloud migration, lakehouse architecture, real-time streaming, and responsible enterprise AI.</p>
               <div className="hero-actions">
                 <a className="button" href="#projects"><Workflow aria-hidden="true" size={18} />Explore selected work<ArrowRight aria-hidden="true" size={16} /></a>
-                <a className="button button-secondary" href={profile.resume} download><Download aria-hidden="true" size={18} />Download resume</a>
               </div>
               <div className="hero-meta">
                 <span><MapPin aria-hidden="true" size={16} />Hong Kong · Open to global conversations</span>
@@ -95,8 +94,8 @@ function App() {
               <dl className="hero-impact" aria-label="Professional profile highlights">
                 <div><dt>15+</dt><dd>Years of experience</dd></div>
                 <div><dt>Azure + AWS</dt><dd>Cloud platforms</dd></div>
-                <div><dt>Data + AI</dt><dd>Engineering focus</dd></div>
-                <div><dt>Hong Kong</dt><dd>Global delivery</dd></div>
+                <div><dt>40%</dt><dd>Faster pipelines</dd></div>
+                <div><dt>99.9%</dt><dd>Integration uptime</dd></div>
               </dl>
             </motion.div>
             <motion.div

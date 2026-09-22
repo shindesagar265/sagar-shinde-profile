@@ -1,7 +1,7 @@
-import { Download, Menu, MonitorCog, Moon, Sun, X } from 'lucide-react';
+import { Menu, MonitorCog, Moon, Sun, X } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useState } from 'react';
-import { navigation, profile } from '../data/portfolio';
+import { navigation } from '../data/portfolio';
 import type { ThemePreference } from '../hooks/useTheme';
 
 interface NavigationProps {
@@ -29,9 +29,6 @@ export function Navigation({ theme, onThemeChange }: NavigationProps) {
           <button className="icon-button" type="button" onClick={onThemeChange} aria-label={`Theme: ${theme}. Activate to change theme.`} title={`Theme: ${theme}`}>
             <ThemeIcon aria-hidden="true" size={18} />
           </button>
-          <a className="button button-small hidden sm:inline-flex" href={profile.resume} download>
-            <Download aria-hidden="true" size={16} /> Resume
-          </a>
           <button className="icon-button mobile-trigger" type="button" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}>
             {open ? <X aria-hidden="true" size={20} /> : <Menu aria-hidden="true" size={20} />}
           </button>
@@ -48,7 +45,6 @@ export function Navigation({ theme, onThemeChange }: NavigationProps) {
             exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
           >
             {navigation.map((item) => <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>)}
-            <a href={profile.resume} download onClick={() => setOpen(false)}><Download aria-hidden="true" size={16} />Download resume</a>
           </motion.nav>
         )}
       </AnimatePresence>
