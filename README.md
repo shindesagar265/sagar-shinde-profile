@@ -35,7 +35,7 @@ The Vite server is configured for local, remote, and embedded VS Code preview us
 
 All editable portfolio data is centralized in `src/data/portfolio.ts`.
 
-The supplied email, LinkedIn profile, GitHub profile, experience, skills, and case-study content are already configured. Project buttons currently lead to Sagar's GitHub profile; replace each `repositoryUrl` only when a public project repository is available. Replace article placeholder labels with published URLs and reading metadata when articles go live.
+The supplied email, LinkedIn, GitHub, Medium, Substack, and Credly profiles, experience, skills, and case-study content are already configured. Project buttons currently lead to Sagar's GitHub profile; replace each `repositoryUrl` only when a public project repository is available. The insights section presents current writing themes and links to the publishing profiles where future articles will appear.
 
 The project intentionally avoids unsupported dates, project metrics, repository claims, and confidential client details.
 
@@ -52,7 +52,7 @@ The CV is publicly accessible. Remove private addresses, identification numbers,
 
 ## QR codes
 
-Run `npm run generate:qr` after changing the portfolio or LinkedIn URL. This regenerates privacy-safe static SVG codes in `public/` without using an external QR service.
+Run `npm run generate:qr` after changing the LinkedIn URL. This regenerates privacy-safe SVG and high-resolution downloadable PNG codes in `public/` without using an external QR service.
 
 ## SEO and social metadata
 

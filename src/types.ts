@@ -41,5 +41,5 @@ export interface Article {
   title: string;
   category: string;
   excerpt: string;
-  readTime: string;
+  format: string;
 }

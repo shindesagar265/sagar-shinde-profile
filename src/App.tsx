@@ -6,6 +6,7 @@ import {
   ArrowDown,
   ArrowRight,
   Award,
+  BadgeCheck,
   BookOpen,
   BrainCircuit,
   BriefcaseBusiness,
@@ -24,10 +25,12 @@ import {
   Mail,
   MapPin,
   Network,
+  Newspaper,
   Quote,
   QrCode,
   Route,
   ShieldCheck,
+  Send,
   Sparkles,
   Users,
   Workflow,
@@ -229,6 +232,9 @@ function App() {
                 </Reveal>
               ))}
             </div>
+            <Reveal className="credential-link" delay={0.12}>
+              <a className="button button-secondary" href={profile.credly} target="_blank" rel="noreferrer"><BadgeCheck aria-hidden="true" size={18} />View verified badges on Credly<ExternalLink aria-hidden="true" size={14} /></a>
+            </Reveal>
           </div>
         </section>
 
@@ -257,7 +263,7 @@ function App() {
 
         <section className="section-shell" id="insights" aria-labelledby="insights-title">
           <div className="container-wide">
-            <Reveal><SectionHeading eyebrow="Writing desk" title="Ideas at the intersection of data and delivery" description="A planned collection of practical articles. Each entry is intentionally marked as a placeholder until published." icon={BookOpen} /></Reveal>
+            <Reveal><SectionHeading eyebrow="Writing desk" title="Ideas at the intersection of data and delivery" description="Practical perspectives on architecture, platform engineering, cloud transformation, and responsible enterprise AI." icon={BookOpen} /></Reveal>
             <div className="articles-grid" id="insights-title">
               {articles.map((article, index) => (
                 <Reveal key={article.title} delay={(index % 3) * 0.04}>
@@ -266,11 +272,18 @@ function App() {
                     <span className="article-category">{article.category}</span>
                     <h3>{article.title}</h3>
                     <p>{article.excerpt}</p>
-                    <span className="article-status"><BookOpen aria-hidden="true" size={15} />{article.readTime}</span>
+                    <span className="article-status"><BookOpen aria-hidden="true" size={15} />{article.format}</span>
                   </article>
                 </Reveal>
               ))}
             </div>
+            <Reveal className="writing-links" delay={0.12}>
+              <div><span className="eyebrow"><Newspaper aria-hidden="true" size={15} />Follow the writing</span><p>Follow future essays, engineering notes, and data platform perspectives.</p></div>
+              <div>
+                <a className="button button-secondary" href={profile.medium} target="_blank" rel="noreferrer"><BookOpen aria-hidden="true" size={18} />Medium<ExternalLink aria-hidden="true" size={14} /></a>
+                <a className="button button-secondary" href={profile.substack} target="_blank" rel="noreferrer"><Send aria-hidden="true" size={18} />Substack<ExternalLink aria-hidden="true" size={14} /></a>
+              </div>
+            </Reveal>
           </div>
         </section>
 
@@ -301,6 +314,9 @@ function App() {
                 <a className="button button-light" href={`mailto:${profile.email}`}><Mail aria-hidden="true" size={18} />Email Sagar</a>
                 <a className="button button-outline-light" href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" size={18} />Connect on LinkedIn<ExternalLink aria-hidden="true" size={14} /></a>
                 <a className="button button-outline-light" href={profile.github} target="_blank" rel="noreferrer"><Github aria-hidden="true" size={18} />View GitHub<ExternalLink aria-hidden="true" size={14} /></a>
+                <a className="button button-outline-light" href={profile.medium} target="_blank" rel="noreferrer"><BookOpen aria-hidden="true" size={18} />Medium<ExternalLink aria-hidden="true" size={14} /></a>
+                <a className="button button-outline-light" href={profile.substack} target="_blank" rel="noreferrer"><Send aria-hidden="true" size={18} />Substack<ExternalLink aria-hidden="true" size={14} /></a>
+                <a className="button button-outline-light" href={profile.credly} target="_blank" rel="noreferrer"><BadgeCheck aria-hidden="true" size={18} />Credly<ExternalLink aria-hidden="true" size={14} /></a>
               </div>
               <div className="resume-download">
                 <a className="button button-outline-light" href={profile.resume} download><Download aria-hidden="true" size={18} />Download CV</a>
@@ -308,20 +324,18 @@ function App() {
               </div>
               <div className="qr-panel">
                 <div className="qr-panel-heading">
-                  <span className="eyebrow"><QrCode aria-hidden="true" size={15} />Connect anywhere</span>
-                  <p>Scan to continue on another device, or select a card to open the destination.</p>
+                  <span className="eyebrow"><QrCode aria-hidden="true" size={15} />Share LinkedIn</span>
+                  <p>Scan the code to open the LinkedIn profile, or download a high-resolution copy to share.</p>
                 </div>
                 <div className="qr-grid">
-                  <a className="qr-card" href={profile.portfolioUrl} target="_blank" rel="noreferrer" aria-label="Open Sagar Shinde's portfolio">
-                    <span className="qr-image"><img src="./qr-portfolio.svg" width="164" height="164" loading="lazy" alt="QR code for Sagar Shinde's portfolio" /></span>
-                    <span><strong>Open portfolio</strong><small>Share this profile</small></span>
-                    <ExternalLink aria-hidden="true" size={17} />
-                  </a>
-                  <a className="qr-card" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="Open Sagar Shinde's LinkedIn profile">
-                    <span className="qr-image"><img src="./qr-linkedin.svg" width="164" height="164" loading="lazy" alt="QR code for Sagar Shinde's LinkedIn profile" /></span>
-                    <span><strong>Connect on LinkedIn</strong><small>View professional profile</small></span>
-                    <Linkedin aria-hidden="true" size={18} />
-                  </a>
+                  <div className="qr-card">
+                    <a className="qr-image" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="Open Sagar Shinde's LinkedIn profile"><img src="./qr-linkedin.svg" width="164" height="164" loading="lazy" alt="QR code for Sagar Shinde's LinkedIn profile" /></a>
+                    <span><strong>Connect on LinkedIn</strong><small>Scan or share the QR code</small></span>
+                    <div className="qr-card-actions">
+                      <a href={profile.linkedin} target="_blank" rel="noreferrer">View profile<ExternalLink aria-hidden="true" size={14} /></a>
+                      <a href="./qr-linkedin.png" download="Sagar-Shinde-LinkedIn-QR.png"><Download aria-hidden="true" size={15} />Download QR</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Reveal>

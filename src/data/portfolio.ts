@@ -16,10 +16,12 @@ export const profile = {
   email: 'shindesagar265@gmail.com',
   linkedin: 'https://linkedin.com/in/sagar-shinde-095a6117/',
   github: 'https://github.com/shindesagar265',
+  medium: 'https://medium.com/@Shindesagar265',
+  credly: 'https://www.credly.com/users/sagar-shinde.56091bcc',
+  substack: 'https://substack.com/@sagarshinde265',
   resume: './Sagar-Shinde-CV.pdf',
   resumeUpdated: 'September 2026',
   photo: './sagar-shinde-profile.jpg',
-  portfolioUrl: 'https://shindesagar265.github.io/sagar-shinde-profile/',
 } as const;
 
 export const achievements: Achievement[] = [
@@ -215,30 +217,30 @@ export const articles: Article[] = [
     title: 'Building Metadata Driven Data Platforms',
     category: 'Data Architecture',
     excerpt: 'How metadata, reusable orchestration, and common controls can turn source onboarding into a scalable platform capability.',
-    readTime: 'Article placeholder',
+    format: 'Architecture guide',
   },
   {
     title: 'Databricks Optimization Techniques',
     category: 'Databricks',
     excerpt: 'Practical techniques for improving Spark execution, Delta Lake layout, streaming reliability, and pipeline efficiency.',
-    readTime: 'Article placeholder',
+    format: 'Engineering deep dive',
   },
   {
     title: 'Designing Enterprise Data Lakes',
     category: 'Cloud Architecture',
     excerpt: 'Design principles for secure, governed, observable data lakes that serve multiple enterprise workloads.',
-    readTime: 'Article placeholder',
+    format: 'Design perspective',
   },
   {
     title: 'Lessons Learned from Cloud Migration',
     category: 'Cloud Migration',
     excerpt: 'Lessons from planning migration waves, validating workloads, managing cutover risk, and preparing teams for operations.',
-    readTime: 'Article placeholder',
+    format: 'Field notes',
   },
   {
     title: 'Generative AI for Enterprise Data Teams',
     category: 'Generative AI',
     excerpt: 'Practical ways governed prompting, grounding, evaluation, and human review can improve enterprise data workflows.',
-    readTime: 'Article placeholder',
+    format: 'Applied AI perspective',
   },
 ];
