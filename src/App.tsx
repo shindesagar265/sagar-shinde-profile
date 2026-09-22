@@ -84,7 +84,6 @@ function App() {
               <h1 id="hero-title">Sagar Shinde</h1>
               <p className="hero-role">Senior Data Engineer <span aria-hidden="true">·</span> Hong Kong</p>
               <p className="hero-statement">Transforming enterprise data into <strong>scalable cloud platforms</strong> through Azure, Databricks, AI, and modern Data Engineering practices.</p>
-              <p className="hero-tagline">Senior Data Engineer <span aria-hidden="true">|</span> Azure Architect <span aria-hidden="true">|</span> Databricks Specialist <span aria-hidden="true">|</span> GenAI Enthusiast</p>
               <div className="hero-actions">
                 <a className="button" href="#projects"><Workflow aria-hidden="true" size={18} />Explore selected work<ArrowRight aria-hidden="true" size={16} /></a>
                 <a className="button button-secondary" href={profile.resume} download><Download aria-hidden="true" size={18} />Download resume</a>
@@ -93,13 +92,6 @@ function App() {
                 <span><MapPin aria-hidden="true" size={16} />Hong Kong · Open to global conversations</span>
                 <a href={`mailto:${profile.email}`}><Mail aria-hidden="true" size={16} />Start a conversation</a>
               </div>
-              <nav className="profile-links" aria-label="Professional profiles">
-                <a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" size={15} />LinkedIn</a>
-                <a href={profile.medium} target="_blank" rel="noreferrer"><BookOpen aria-hidden="true" size={15} />Medium</a>
-                <a href={profile.substack} target="_blank" rel="noreferrer"><Send aria-hidden="true" size={15} />Substack</a>
-                <a href={profile.credly} target="_blank" rel="noreferrer"><BadgeCheck aria-hidden="true" size={15} />Credly</a>
-                <a href={profile.github} target="_blank" rel="noreferrer"><Github aria-hidden="true" size={15} />GitHub</a>
-              </nav>
               <dl className="hero-impact" aria-label="Professional profile highlights">
                 <div><dt>15+</dt><dd>Years of experience</dd></div>
                 <div><dt>Azure + AWS</dt><dd>Cloud platforms</dd></div>
@@ -114,7 +106,7 @@ function App() {
               transition={{ duration: 0.7, delay: 0.15 }}
             >
               <CloudVisual photo={profile.photo} />
-              <div className="status-pill"><span /> Available for impactful data challenges</div>
+              <div className="status-pill"><span /> Enterprise data · Cloud platforms · Responsible AI</div>
             </motion.div>
           </div>
           <a className="scroll-cue" href="#about"><ArrowDown aria-hidden="true" size={18} />Discover the profile</a>
@@ -259,7 +251,6 @@ function App() {
                     <div className="tag-list">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div>
                     <div className="project-actions">
                       <button className="text-button" type="button" onClick={() => setSelectedProject(project)}>View architecture<ArrowRight aria-hidden="true" size={16} /></button>
-                      <a href={project.repositoryUrl} target="_blank" rel="noreferrer" aria-label={`Explore ${project.title} on GitHub`}><Github aria-hidden="true" size={18} /><ExternalLink aria-hidden="true" size={13} /></a>
                     </div>
                   </motion.article>
                 </Reveal>
@@ -270,7 +261,7 @@ function App() {
 
         <section className="section-shell" id="insights" aria-labelledby="insights-title">
           <div className="container-wide">
-            <Reveal><SectionHeading eyebrow="Writing desk" title="Ideas at the intersection of data and delivery" description="Practical perspectives on architecture, platform engineering, cloud transformation, and responsible enterprise AI." icon={BookOpen} /></Reveal>
+            <Reveal><SectionHeading eyebrow="Areas of interest" title="Topics I am exploring" description="Questions and themes shaping my thinking across architecture, platform engineering, cloud transformation, and responsible enterprise AI." icon={BookOpen} /></Reveal>
             <div className="articles-grid" id="insights-title">
               {articles.map((article, index) => (
                 <Reveal key={article.title} delay={(index % 3) * 0.04}>
@@ -279,13 +270,13 @@ function App() {
                     <span className="article-category">{article.category}</span>
                     <h3>{article.title}</h3>
                     <p>{article.excerpt}</p>
-                    <span className="article-status"><BookOpen aria-hidden="true" size={15} />{article.format}</span>
+                    <span className="article-status"><Compass aria-hidden="true" size={15} />Exploration topic</span>
                   </article>
                 </Reveal>
               ))}
             </div>
             <Reveal className="writing-links" delay={0.12}>
-              <div><span className="eyebrow"><Newspaper aria-hidden="true" size={15} />Follow the writing</span><p>Follow future essays, engineering notes, and data platform perspectives.</p></div>
+              <div><span className="eyebrow"><Newspaper aria-hidden="true" size={15} />Publishing profiles</span><p>Follow Medium and Substack for future essays and engineering notes.</p></div>
               <div>
                 <a className="button button-secondary" href={profile.medium} target="_blank" rel="noreferrer"><BookOpen aria-hidden="true" size={18} />Medium<ExternalLink aria-hidden="true" size={14} /></a>
                 <a className="button button-secondary" href={profile.substack} target="_blank" rel="noreferrer"><Send aria-hidden="true" size={18} />Substack<ExternalLink aria-hidden="true" size={14} /></a>
@@ -320,10 +311,6 @@ function App() {
               <div className="contact-actions">
                 <a className="button button-light" href={`mailto:${profile.email}`}><Mail aria-hidden="true" size={18} />Email Sagar</a>
                 <a className="button button-outline-light" href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" size={18} />Connect on LinkedIn<ExternalLink aria-hidden="true" size={14} /></a>
-                <a className="button button-outline-light" href={profile.github} target="_blank" rel="noreferrer"><Github aria-hidden="true" size={18} />View GitHub<ExternalLink aria-hidden="true" size={14} /></a>
-                <a className="button button-outline-light" href={profile.medium} target="_blank" rel="noreferrer"><BookOpen aria-hidden="true" size={18} />Medium<ExternalLink aria-hidden="true" size={14} /></a>
-                <a className="button button-outline-light" href={profile.substack} target="_blank" rel="noreferrer"><Send aria-hidden="true" size={18} />Substack<ExternalLink aria-hidden="true" size={14} /></a>
-                <a className="button button-outline-light" href={profile.credly} target="_blank" rel="noreferrer"><BadgeCheck aria-hidden="true" size={18} />Credly<ExternalLink aria-hidden="true" size={14} /></a>
               </div>
               <div className="resume-download">
                 <a className="button button-outline-light" href={profile.resume} download><Download aria-hidden="true" size={18} />Download CV</a>

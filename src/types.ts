@@ -34,12 +34,10 @@ export interface Project {
   approach: string;
   architecture: string[];
   technologies: string[];
-  repositoryUrl: string;
 }
 
 export interface Article {
   title: string;
   category: string;
   excerpt: string;
-  format: string;
 }

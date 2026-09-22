@@ -168,7 +168,6 @@ export const projects: Project[] = [
     approach: 'Drive ingestion behavior from metadata and reusable orchestration, transformation, validation, and audit components.',
     architecture: ['Source metadata', 'ADF orchestration', 'Databricks processing', 'Synapse serving'],
     technologies: ['ADF', 'Databricks', 'PySpark', 'Azure Synapse'],
-    repositoryUrl: profile.github,
   },
   {
     title: 'GenAI Sales Enablement Platform',
@@ -178,7 +177,6 @@ export const projects: Project[] = [
     approach: 'Combine structured context, governed prompting, GPT-4o generation, and review-ready output workflows.',
     architecture: ['Business context', 'Python orchestration', 'Azure OpenAI', 'Reviewed content'],
     technologies: ['Azure OpenAI', 'Python', 'GPT-4o'],
-    repositoryUrl: profile.github,
   },
   {
     title: 'Real Time Kafka Streaming Platform',
@@ -188,7 +186,6 @@ export const projects: Project[] = [
     approach: 'Use Kafka ingestion, Databricks Structured Streaming, checkpoints, and Delta Lake for durable incremental processing.',
     architecture: ['Event producers', 'Kafka', 'Databricks streaming', 'Delta Lake'],
     technologies: ['Kafka', 'Databricks', 'Delta Lake'],
-    repositoryUrl: profile.github,
   },
   {
     title: 'Azure Migration Accelerator',
@@ -198,7 +195,6 @@ export const projects: Project[] = [
     approach: 'Use migration waves, reusable ADF patterns, Synapse landing zones, Databricks transformations, and validation gates.',
     architecture: ['Assess workloads', 'ADF migration', 'Databricks transform', 'Synapse validate'],
     technologies: ['ADF', 'Synapse', 'Databricks'],
-    repositoryUrl: profile.github,
   },
   {
     title: 'Data Quality Framework',
@@ -208,7 +204,6 @@ export const projects: Project[] = [
     approach: 'Represent reusable rules as configuration and execute distributed validations with transparent result publishing.',
     architecture: ['Rule configuration', 'PySpark validation', 'Quality results', 'Operational alerts'],
     technologies: ['PySpark', 'Databricks'],
-    repositoryUrl: profile.github,
   },
 ];
 
@@ -217,30 +212,25 @@ export const articles: Article[] = [
     title: 'Building Metadata Driven Data Platforms',
     category: 'Data Architecture',
     excerpt: 'How metadata, reusable orchestration, and common controls can turn source onboarding into a scalable platform capability.',
-    format: 'Architecture guide',
   },
   {
     title: 'Databricks Optimization Techniques',
     category: 'Databricks',
     excerpt: 'Practical techniques for improving Spark execution, Delta Lake layout, streaming reliability, and pipeline efficiency.',
-    format: 'Engineering deep dive',
   },
   {
     title: 'Designing Enterprise Data Lakes',
     category: 'Cloud Architecture',
     excerpt: 'Design principles for secure, governed, observable data lakes that serve multiple enterprise workloads.',
-    format: 'Design perspective',
   },
   {
     title: 'Lessons Learned from Cloud Migration',
     category: 'Cloud Migration',
     excerpt: 'Lessons from planning migration waves, validating workloads, managing cutover risk, and preparing teams for operations.',
-    format: 'Field notes',
   },
   {
     title: 'Generative AI for Enterprise Data Teams',
     category: 'Generative AI',
     excerpt: 'Practical ways governed prompting, grounding, evaluation, and human review can improve enterprise data workflows.',
-    format: 'Applied AI perspective',
   },
 ];

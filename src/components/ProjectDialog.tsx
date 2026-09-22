@@ -1,4 +1,4 @@
-import { ExternalLink, Github, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import type { Project } from '../types';
 import { ArchitectureStrip } from './ArchitectureStrip';
@@ -39,7 +39,6 @@ export function ProjectDialog({ project, onClose }: ProjectDialogProps) {
       </div>
       <div className="tag-list" aria-label="Technologies">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div>
       <footer className="dialog-actions">
-        <a className="button button-secondary" href={project.repositoryUrl} target="_blank" rel="noreferrer"><Github aria-hidden="true" size={17} />Explore on GitHub<ExternalLink aria-hidden="true" size={14} /></a>
         <button className="button" type="button" onClick={onClose}>Return to projects</button>
       </footer>
     </dialog>
