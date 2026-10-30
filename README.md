@@ -35,7 +35,7 @@ The Vite server is configured for local, remote, and embedded VS Code preview us
 
 All editable portfolio data is centralized in `src/data/portfolio.ts`.
 
-The supplied email, LinkedIn, GitHub, Medium, Substack, and Credly profiles, experience, skills, and case-study content are already configured. Projects are presented as architecture case studies without unsupported repository links. Add a specific public artifact only when a repository or published case study is available. The insights section presents current writing themes and links to the publishing profiles where future articles will appear.
+The supplied email, LinkedIn, GitHub, Medium, Substack, and Credly profiles, experience, skills, and case-study content are already configured. Projects are presented as architecture case studies without unsupported repository links. Add a specific public artifact only when a repository or published case study is available. The Community section highlights engineering knowledge-sharing and links to the publishing profiles.
 
 The project intentionally avoids unsupported dates, project metrics, repository claims, and confidential client details.
 

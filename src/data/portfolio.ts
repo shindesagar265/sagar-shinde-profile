@@ -1,11 +1,11 @@
-import type { Achievement, Article, Certification, Experience, Project, SkillCategory } from '../types';
+import type { Achievement, Certification, CommunityHighlight, Experience, Project, SkillCategory } from '../types';
 
 export const navigation = [
   { label: 'About', href: '#about' },
-  { label: 'Expertise', href: '#skills' },
+  { label: 'Capabilities', href: '#skills' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Work', href: '#projects' },
-  { label: 'Insights', href: '#insights' },
+  { label: 'Selected work', href: '#projects' },
+  { label: 'Community', href: '#community' },
   { label: 'Contact', href: '#contact' },
 ] as const;
 
@@ -26,8 +26,8 @@ export const profile = {
 
 export const achievements: Achievement[] = [
   {
-    title: 'Enterprise Ingestion Framework',
-    description: 'Standardized onboarding across Oracle, SQL Server, MongoDB, Kafka, and JSON sources with reusable Synapse-based ingestion.',
+    title: 'Regional Data Delivery',
+    description: 'Delivered Hong Kong, Japan, and global PySpark/SQL pipelines with a REST API trigger and zero critical defects.',
     icon: 'database',
   },
   {
@@ -36,72 +36,44 @@ export const achievements: Achievement[] = [
     icon: 'shield',
   },
   {
-    title: 'Enterprise Cloud Migration',
-    description: 'Led the migration of on-premises NiFi workflows to Azure, improving integration uptime to 99.9%.',
-    icon: 'route',
-  },
-  {
-    title: 'Real-Time Data Architecture',
-    description: 'Engineered Kafka and Databricks streaming pipelines for high-throughput JSON ingestion and real-time reporting.',
-    icon: 'cloud',
-  },
-  {
-    title: 'Databricks Optimization',
-    description: 'Reduced pipeline execution time by 40% using Delta Live Tables, partition pruning, and Z-Ordering.',
+    title: 'Governed Data Engineering Assistant',
+    description: 'Developed an assistant for onboarding, metadata health, pipeline-run support, repository workflows, and code review with approval gates.',
     icon: 'layers',
   },
   {
-    title: 'Global Engineering Leadership',
-    description: 'Managed a four-person offshore engineering team with automated CI/CD and consistent sprint delivery.',
+    title: 'Real-Time Data Architecture',
+    description: 'Designed and delivered the MM UIP CDC streaming architecture, recorded as the first streaming solution to go live without issues.',
+    icon: 'cloud',
+  },
+  {
+    title: 'Cloud Platform Modernization',
+    description: 'Migrated on-premises NiFi workflows to Azure and improved integration uptime to 99.9%.',
+    icon: 'route',
+  },
+  {
+    title: 'Engineering Leadership',
+    description: 'Led a four-person engineering team, coached peers through reviews, and enabled Copilot-assisted code review in CI.',
     icon: 'users',
   },
 ];
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: 'Cloud',
-    skills: [
-      { name: 'Azure', level: 95 },
-      { name: 'AWS', level: 82 },
-    ],
+    title: 'Cloud Platforms',
+    skills: ['Azure', 'AWS', 'Azure Data Factory', 'Azure Synapse', 'ADLS'],
   },
   {
-    title: 'Data Platforms',
-    skills: [
-      { name: 'Azure Databricks', level: 94 },
-      { name: 'Azure Synapse', level: 92 },
-      { name: 'Azure Data Factory', level: 93 },
-      { name: 'Hadoop · Hive · HBase', level: 86 },
-      { name: 'Kafka', level: 89 },
-    ],
+    title: 'Lakehouse & Streaming',
+    skills: ['Azure Databricks', 'Delta Lake', 'Delta Live Tables', 'Kafka', 'Structured Streaming'],
   },
   {
-    title: 'Programming & Databases',
-    skills: [
-      { name: 'Python', level: 91 },
-      { name: 'SQL', level: 95 },
-      { name: 'Unix Shell', level: 87 },
-      { name: 'Oracle · MongoDB · HBase', level: 89 },
-    ],
+    title: 'Engineering & Data',
+    skills: ['Python', 'PySpark', 'SQL', 'Oracle', 'SQL Server', 'MongoDB', 'Hadoop', 'Hive', 'HBase'],
   },
   {
-    title: 'DevOps, Observability & AI',
-    skills: [
-      { name: 'GitHub · Azure DevOps · Jenkins', level: 88 },
-      { name: 'Log Analytics · Splunk · Kibana', level: 86 },
-      { name: 'Azure OpenAI · GenAI', level: 84 },
-      { name: 'Pandas · NumPy', level: 87 },
-    ],
+    title: 'Delivery, Governance & AI',
+    skills: ['GitHub', 'GitHub Copilot', 'Jenkins', 'Azure DevOps', 'Azure OpenAI', 'Log Analytics', 'Splunk', 'Kibana', 'Power BI'],
   },
-];
-
-export const radarSkills = [
-  { subject: 'Cloud', value: 94 },
-  { subject: 'Lakehouse', value: 93 },
-  { subject: 'Engineering', value: 94 },
-  { subject: 'Governance', value: 90 },
-  { subject: 'Leadership', value: 90 },
-  { subject: 'GenAI', value: 78 },
 ];
 
 export const experiences: Experience[] = [
@@ -110,8 +82,14 @@ export const experiences: Experience[] = [
     role: 'Senior Data Engineer',
     period: 'Dec 2018–Present',
     location: 'Hong Kong',
-    summary: 'Architecting Azure data platforms, cloud migrations, streaming solutions, and applied GenAI capabilities for the insurance domain.',
-    highlights: ['60% less manual GenAI content work', '99.9% integration uptime after migration', '40% faster Databricks pipelines', 'Led four offshore engineers'],
+    summary: 'Leading Azure data engineering across insurance, global integration, platform modernization, and engineering enablement.',
+    highlights: [
+      'Delivered Hong Kong, Japan, and global PySpark/SQL pipelines',
+      'Developed a governed data engineering assistant',
+      'Led cross-market Oracle connector migration and regression testing',
+      'Delivered the first Asia sales-enablement GenAI MVP',
+      'Led a four-person engineering team and coached peers',
+    ],
     color: '#00A758',
   },
   {
@@ -178,6 +156,24 @@ export const projects: Project[] = [
     technologies: ['ADF', 'Databricks', 'PySpark', 'Azure Synapse'],
   },
   {
+    title: 'Governed Data Engineering Assistant',
+    eyebrow: 'Engineering enablement',
+    summary: 'An approval-gated assistant that helps engineers with repeatable data-platform and repository workflows.',
+    challenge: 'Make common onboarding, metadata-health, pipeline-run, and code-review tasks easier to follow without bypassing governance.',
+    approach: 'Guide users through scoped checks and repository actions, with explicit approval before write operations.',
+    architecture: ['Engineer request', 'Context checks', 'Review guidance', 'Approved action'],
+    technologies: ['Azure Data Factory', 'Azure Synapse', 'GitHub'],
+  },
+  {
+    title: 'Regional Data Integration',
+    eyebrow: 'Cross-market delivery',
+    summary: 'Regional and global pipelines for Hong Kong and Japan, described without exposing internal source-system details.',
+    challenge: 'Align schemas and data-quality expectations across regional teams and a shared global data lake.',
+    approach: 'Build PySpark and SQL curation workflows and a REST API trigger for the master pipeline, with validation and stakeholder review.',
+    architecture: ['Regional sources', 'PySpark/SQL curation', 'Master pipeline trigger', 'Global data lake'],
+    technologies: ['PySpark', 'SQL', 'REST API', 'Azure'],
+  },
+  {
     title: 'GenAI Sales Enablement Platform',
     eyebrow: 'Applied enterprise AI',
     summary: 'An Azure OpenAI solution designed to accelerate the creation of relevant, high-quality sales enablement content.',
@@ -196,15 +192,6 @@ export const projects: Project[] = [
     technologies: ['Kafka', 'Databricks', 'Delta Lake'],
   },
   {
-    title: 'Azure Migration Accelerator',
-    eyebrow: 'Cloud modernization',
-    summary: 'A repeatable delivery pattern for moving on-premises data workloads to a governed Azure data platform.',
-    challenge: 'Increase migration velocity without compromising reconciliation, security, continuity, or supportability.',
-    approach: 'Use migration waves, reusable ADF patterns, Synapse landing zones, Databricks transformations, and validation gates.',
-    architecture: ['Assess workloads', 'ADF migration', 'Databricks transform', 'Synapse validate'],
-    technologies: ['ADF', 'Synapse', 'Databricks'],
-  },
-  {
     title: 'Data Quality Framework',
     eyebrow: 'Trusted data',
     summary: 'A configurable quality framework that makes validation rules, results, and remediation signals visible at scale.',
@@ -215,30 +202,17 @@ export const projects: Project[] = [
   },
 ];
 
-export const articles: Article[] = [
+export const communityHighlights: CommunityHighlight[] = [
   {
-    title: 'Building Metadata Driven Data Platforms',
-    category: 'Data Architecture',
-    excerpt: 'How metadata, reusable orchestration, and common controls can turn source onboarding into a scalable platform capability.',
+    title: 'Code review as mentorship',
+    description: 'Use practical review checklists and specific feedback to strengthen performance, scalability, security, and maintainability.',
   },
   {
-    title: 'Databricks Optimization Techniques',
-    category: 'Databricks',
-    excerpt: 'Practical techniques for improving Spark execution, Delta Lake layout, streaming reliability, and pipeline efficiency.',
+    title: 'Knowledge shared across teams',
+    description: 'Share GitHub Copilot and GenAI practices with Asia and global Data Engineering communities of practice.',
   },
   {
-    title: 'Designing Enterprise Data Lakes',
-    category: 'Cloud Architecture',
-    excerpt: 'Design principles for secure, governed, observable data lakes that serve multiple enterprise workloads.',
-  },
-  {
-    title: 'Lessons Learned from Cloud Migration',
-    category: 'Cloud Migration',
-    excerpt: 'Lessons from planning migration waves, validating workloads, managing cutover risk, and preparing teams for operations.',
-  },
-  {
-    title: 'Generative AI for Enterprise Data Teams',
-    category: 'Generative AI',
-    excerpt: 'Practical ways governed prompting, grounding, evaluation, and human review can improve enterprise data workflows.',
+    title: 'Cross-functional delivery',
+    description: 'Align data engineers, analysts, data scientists, architects, and regional stakeholders around schemas, quality, and delivery.',
   },
 ];

@@ -6,7 +6,7 @@ export interface Achievement {
 
 export interface SkillCategory {
   title: string;
-  skills: Array<{ name: string; level: number }>;
+  skills: string[];
 }
 
 export interface Experience {
@@ -36,8 +36,7 @@ export interface Project {
   technologies: string[];
 }
 
-export interface Article {
+export interface CommunityHighlight {
   title: string;
-  category: string;
-  excerpt: string;
+  description: string;
 }

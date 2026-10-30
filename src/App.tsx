@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react';
+import { useState } from 'react';
 import type { CSSProperties } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import type { LucideIcon } from 'lucide-react';
@@ -13,24 +13,18 @@ import {
   CheckCircle2,
   Cloud,
   Code2,
-  Compass,
   Database,
   Download,
   ExternalLink,
-  Github,
-  GraduationCap,
-  HeartHandshake,
   Layers3,
   Linkedin,
   Mail,
   MapPin,
   Network,
-  Newspaper,
   Quote,
   QrCode,
   Route,
   ShieldCheck,
-  Send,
   Sparkles,
   Users,
   Workflow,
@@ -43,11 +37,9 @@ import { ProjectDialog } from './components/ProjectDialog';
 import { Reveal } from './components/Reveal';
 import { ScrollProgress } from './components/ScrollProgress';
 import { SectionHeading } from './components/SectionHeading';
-import { achievements, articles, certifications, experiences, profile, projects, skillCategories } from './data/portfolio';
+import { achievements, certifications, communityHighlights, experiences, profile, projects, skillCategories } from './data/portfolio';
 import { useTheme } from './hooks/useTheme';
 import type { Project } from './types';
-
-const SkillsChart = lazy(() => import('./components/SkillsChart'));
 
 const achievementIcons: Record<string, LucideIcon> = {
   cloud: Cloud,
@@ -92,8 +84,8 @@ function App() {
                 <a href={`mailto:${profile.email}`}><Mail aria-hidden="true" size={16} />Start a conversation</a>
               </div>
               <dl className="hero-impact" aria-label="Professional profile highlights">
-                <div><dt>15+</dt><dd>Years of experience</dd></div>
-                <div><dt>Azure + AWS</dt><dd>Cloud platforms</dd></div>
+                <div><dt>16+</dt><dd>Years of experience</dd></div>
+                <div><dt>4 engineers</dt><dd>Team leadership</dd></div>
                 <div><dt>40%</dt><dd>Faster pipelines</dd></div>
                 <div><dt>99.9%</dt><dd>Integration uptime</dd></div>
               </dl>
@@ -118,8 +110,8 @@ function App() {
             </Reveal>
             <Reveal className="about-copy" delay={0.08}>
               <p className="lead-copy" id="about-title">I work at the intersection of <span>data architecture, cloud engineering, and delivery leadership</span>.</p>
-              <p>Across more than fifteen years in technology, my focus has evolved from building dependable systems to shaping the engineering foundations that allow teams and organizations to move with confidence.</p>
-              <p>My experience spans Azure and AWS, Databricks Medallion architecture, enterprise integration, cloud migration, insurance data, Master Data Management, data quality, and emerging Generative AI patterns. I value solutions that are technically sound, operationally honest, and easy for the next engineer to understand.</p>
+              <p>Across 16+ years in technology, including 7+ years at Manulife, my focus has grown from building dependable systems to shaping the engineering foundations that help teams deliver with confidence.</p>
+              <p>My work spans Azure and AWS, Databricks lakehouse architecture, cross-market integration, cloud migration, insurance data, data quality, and applied GenAI. I pair hands-on delivery with technical guidance, code review, and engineering enablement.</p>
               <blockquote><Quote aria-hidden="true" size={22} />The best data platform is not only scalable. It is trusted, explainable, and designed for the people who operate it.</blockquote>
             </Reveal>
           </div>
@@ -154,24 +146,22 @@ function App() {
                 {skillCategories.map((category, categoryIndex) => (
                   <Reveal className="skill-card glass-card" key={category.title} delay={categoryIndex * 0.05}>
                     <h3><Code2 aria-hidden="true" size={18} />{category.title}</h3>
-                    <ul>
-                      {category.skills.map((skill) => (
-                        <li key={skill.name}>
-                          <span><strong>{skill.name}</strong><small>{skill.level}%</small></span>
-                          <span className="skill-track" role="progressbar" aria-label={`${skill.name} self-assessed proficiency`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={skill.level}>
-                            <motion.span initial={{ width: 0 }} whileInView={{ width: `${skill.level}%` }} viewport={{ once: true }} transition={{ duration: reduceMotion ? 0 : 0.8 }} />
-                          </span>
-                        </li>
-                      ))}
+                    <ul className="skill-tag-list">
+                      {category.skills.map((skill) => <li key={skill}><span className="skill-tag">{skill}</span></li>)}
                     </ul>
                   </Reveal>
                 ))}
               </div>
-              <Reveal className="radar-card glass-card" delay={0.12}>
-                <div className="card-kicker"><Network aria-hidden="true" size={17} />Capability balance</div>
-                <h3>Engineering breadth with platform depth</h3>
-                <p>A visual summary of complementary focus areas. Values are self-assessed and provided as directional context.</p>
-                <Suspense fallback={<div className="chart-skeleton" aria-label="Loading skills visualization" />}><SkillsChart /></Suspense>
+              <Reveal className="leadership-card glass-card" delay={0.12}>
+                <div className="card-kicker"><Network aria-hidden="true" size={17} />Leadership in practice</div>
+                <h3>Build the platform. Help the team deliver.</h3>
+                <p>Technical leadership grounded in hands-on engineering and shared ownership.</p>
+                <ul>
+                  <li><CheckCircle2 aria-hidden="true" size={17} />Own delivery across regional and global teams</li>
+                  <li><CheckCircle2 aria-hidden="true" size={17} />Coach through code reviews and engineering standards</li>
+                  <li><CheckCircle2 aria-hidden="true" size={17} />Automate repeatable workflows with governance controls</li>
+                  <li><CheckCircle2 aria-hidden="true" size={17} />Translate business needs into supportable data platforms</li>
+                </ul>
               </Reveal>
             </div>
           </div>
@@ -258,45 +248,27 @@ function App() {
           </div>
         </section>
 
-        <section className="section-shell" id="insights" aria-labelledby="insights-title">
+        <section className="section-shell" id="community" aria-labelledby="community-title">
           <div className="container-wide">
-            <Reveal><SectionHeading eyebrow="Areas of interest" title="Topics I am exploring" description="Questions and themes shaping my thinking across architecture, platform engineering, cloud transformation, and responsible enterprise AI." icon={BookOpen} /></Reveal>
-            <div className="articles-grid" id="insights-title">
-              {articles.map((article, index) => (
-                <Reveal key={article.title} delay={(index % 3) * 0.04}>
-                  <article className="article-card">
-                    <div className="article-index">0{index + 1}</div>
-                    <span className="article-category">{article.category}</span>
-                    <h3>{article.title}</h3>
-                    <p>{article.excerpt}</p>
-                    <span className="article-status"><Compass aria-hidden="true" size={15} />Exploration topic</span>
+            <Reveal><SectionHeading id="community-title" eyebrow="Engineering community" title="Leadership through shared practice" description="Technical leadership also means making knowledge, standards, and good engineering habits easier to share." icon={Users} /></Reveal>
+            <div className="community-grid">
+              {communityHighlights.map((highlight, index) => (
+                <Reveal key={highlight.title} delay={index * 0.05}>
+                  <article className="community-card">
+                    <span className="community-number">0{index + 1}</span>
+                    <h3>{highlight.title}</h3>
+                    <p>{highlight.description}</p>
                   </article>
                 </Reveal>
               ))}
             </div>
             <Reveal className="writing-links" delay={0.12}>
-              <div><span className="eyebrow"><Newspaper aria-hidden="true" size={15} />Publishing profiles</span><p>Follow Medium and Substack for future essays and engineering notes.</p></div>
+              <div><span className="eyebrow"><BookOpen aria-hidden="true" size={15} />Writing profiles</span><p>Find more of my writing and engineering notes.</p></div>
               <div>
                 <a className="button button-secondary" href={profile.medium} target="_blank" rel="noreferrer"><BookOpen aria-hidden="true" size={18} />Medium<ExternalLink aria-hidden="true" size={14} /></a>
-                <a className="button button-secondary" href={profile.substack} target="_blank" rel="noreferrer"><Send aria-hidden="true" size={18} />Substack<ExternalLink aria-hidden="true" size={14} /></a>
+                <a className="button button-secondary" href={profile.substack} target="_blank" rel="noreferrer">Substack<ExternalLink aria-hidden="true" size={14} /></a>
               </div>
             </Reveal>
-          </div>
-        </section>
-
-        <section className="section-shell beyond-section" aria-labelledby="beyond-title">
-          <div className="container-wide beyond-grid">
-            <Reveal>
-              <SectionHeading eyebrow="Beyond technology" title="Curiosity keeps the architecture human" description="Strong platforms are built by people who listen, learn, teach, and remain curious about the wider context." icon={Compass} />
-              <p className="beyond-intro" id="beyond-title">Living in Hong Kong brings a global perspective to my work. Beyond delivery, I invest in continuous learning, cloud technologies, the Data Engineering community, and open-source contribution.</p>
-            </Reveal>
-            <div className="beyond-cards">
-              <Reveal className="beyond-card"><MapPin aria-hidden="true" size={26} /><h3>Hong Kong</h3><p>A global technology hub that shapes my cross-cultural perspective.</p></Reveal>
-              <Reveal className="beyond-card" delay={0.04}><GraduationCap aria-hidden="true" size={26} /><h3>Continuous learning</h3><p>Exploring new tools while remaining grounded in durable engineering principles.</p></Reveal>
-              <Reveal className="beyond-card" delay={0.08}><Cloud aria-hidden="true" size={26} /><h3>Cloud technologies</h3><p>Following the evolution of Azure, AWS, lakehouse, and AI capabilities.</p></Reveal>
-              <Reveal className="beyond-card" delay={0.12}><HeartHandshake aria-hidden="true" size={26} /><h3>Data community</h3><p>Sharing ideas and practical lessons with fellow data practitioners.</p></Reveal>
-              <Reveal className="beyond-card" delay={0.16}><Github aria-hidden="true" size={26} /><h3>Open source</h3><p>Contributing reusable ideas, patterns, and engineering knowledge.</p></Reveal>
-            </div>
           </div>
         </section>
 

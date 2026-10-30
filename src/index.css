@@ -87,7 +87,7 @@ button { font: inherit; }
 .hero::after { content: ''; position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(to bottom, transparent, black 20%, black 76%, transparent); opacity: .38; pointer-events: none; }
 .hero-mesh { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse at 58% 25%, rgba(0,120,212,.09), transparent 34%), radial-gradient(ellipse at 82% 58%, rgba(107,70,193,.1), transparent 36%); pointer-events: none; }
 .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(390px, .94fr); align-items: center; gap: 76px; }
-.hero-grid > *, .skills-layout > *, .timeline-layout > *, .beyond-grid > * { min-width: 0; }
+.hero-grid > *, .skills-layout > *, .timeline-layout > * { min-width: 0; }
 .hero-copy { max-width: 700px; min-width: 0; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--azure); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 99px; background: var(--signal); box-shadow: 0 0 0 5px color-mix(in srgb, var(--signal) 12%, transparent); }
@@ -154,17 +154,15 @@ button { font: inherit; }
 .skill-card { padding: 23px; border-radius: 16px; }
 .skill-card h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 21px; font-family: Manrope, sans-serif; font-size: 15px; }
 .skill-card h3 svg { color: var(--azure); }
-.skill-card ul { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
-.skill-card li > span:first-child { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 6px; font-size: 12px; }
-.skill-card li strong { font-weight: 600; }
-.skill-card li small { color: var(--muted); }
-.skill-track { display: block; height: 5px; overflow: hidden; border-radius: 99px; background: var(--line); }
-.skill-track > span { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #0078d4, #6b46c1); }
-.radar-card { padding: 27px; border-radius: 18px; }
+.skill-card ul { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.skill-tag { display: inline-flex; align-items: center; min-height: 32px; padding: 6px 9px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); background: var(--surface-2); font-size: 11px; font-weight: 650; }
+.leadership-card { padding: 27px; border-radius: 16px; }
+.leadership-card h3 { margin: 14px 0 7px; font-family: Manrope, sans-serif; font-size: 22px; line-height: 1.25; }
+.leadership-card > p { margin: 0; color: var(--muted); font-size: 13px; }
+.leadership-card ul { display: grid; gap: 13px; margin: 24px 0 0; padding: 0; list-style: none; }
+.leadership-card li { display: flex; align-items: flex-start; gap: 9px; color: var(--muted); font-size: 12px; }
+.leadership-card li svg { flex: 0 0 auto; color: var(--signal); }
 .card-kicker { display: flex; align-items: center; gap: 8px; color: var(--azure); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.radar-card h3 { margin: 14px 0 7px; font-family: Manrope, sans-serif; font-size: 22px; letter-spacing: -.025em; }
-.radar-card > p { margin: 0; color: var(--muted); font-size: 12px; }
-.chart-skeleton { height: 330px; margin-top: 16px; border-radius: 50%; background: linear-gradient(90deg, var(--surface-2), var(--surface), var(--surface-2)); background-size: 200% 100%; animation: shimmer 1.3s infinite linear; }
 
 .timeline-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 28px; }
 .timeline-tabs { position: relative; display: grid; gap: 9px; }
@@ -230,26 +228,14 @@ button { font: inherit; }
 .project-dialog > .tag-list { margin-top: 18px; }
 .dialog-actions { display: flex; justify-content: flex-end; gap: 10px; margin: 26px 30px 30px; }
 
-.articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.article-card { position: relative; min-height: 285px; padding: 25px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease; }
-.article-card:hover { transform: translateY(-4px); border-color: var(--line-strong); box-shadow: var(--shadow); }
-.article-index { color: color-mix(in srgb, var(--azure) 28%, transparent); font-family: Manrope, sans-serif; font-size: 45px; font-weight: 800; line-height: 1; }
-.article-category { display: inline-block; margin-top: 28px; color: var(--azure); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.article-card h3 { margin: 9px 0; font-family: Manrope, sans-serif; font-size: 18px; line-height: 1.35; }
-.article-card p { margin: 0 0 20px; color: var(--muted); font-size: 13px; }
-.article-status { position: absolute; bottom: 22px; display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 11px; font-weight: 700; }
+.community-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.community-card { min-height: 190px; padding: 23px 24px; border-top: 2px solid var(--azure); border-bottom: 1px solid var(--line); background: var(--bg-elevated); }
+.community-number { color: var(--azure); font-family: Manrope, sans-serif; font-size: 13px; font-weight: 800; }
+.community-card h3 { margin: 18px 0 8px; font-family: Manrope, sans-serif; font-size: 18px; line-height: 1.3; }
+.community-card p { margin: 0; color: var(--muted); font-size: 13px; }
 .writing-links { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-top: 24px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 16px; background: var(--bg-elevated); box-shadow: var(--shadow); }
 .writing-links p { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
 .writing-links > div:last-child { display: flex; flex: 0 0 auto; gap: 10px; }
-.beyond-section { padding-top: 50px; }
-.beyond-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
-.beyond-intro { color: var(--muted); }
-.beyond-cards { display: grid; gap: 12px; }
-.beyond-card { display: grid; grid-template-columns: 52px 1fr; column-gap: 18px; align-items: center; padding: 21px; border: 1px solid var(--line); border-radius: 15px; background: var(--bg-elevated); }
-.beyond-card svg { grid-row: 1 / span 2; color: var(--azure); }
-.beyond-card h3, .beyond-card p { margin: 0; }
-.beyond-card h3 { font-family: Manrope, sans-serif; font-size: 15px; }
-.beyond-card p { color: var(--muted); font-size: 13px; }
 
 .contact-section { padding: 120px 0; color: white; background: linear-gradient(135deg, #005a9e, #253270 56%, #5a3292); overflow: hidden; }
 .contact-section::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 54px 54px; mask-image: radial-gradient(circle, black, transparent 76%); pointer-events: none; }
@@ -296,7 +282,7 @@ button { font: inherit; }
   .hero-art { width: min(580px, 100%); margin-inline: auto; }
   .about-grid, .beyond-grid { grid-template-columns: 1fr; gap: 28px; }
   .about-grid .section-heading { margin-bottom: 0; }
-  .achievement-grid, .articles-grid { grid-template-columns: repeat(2, 1fr); }
+  .achievement-grid, .community-grid { grid-template-columns: repeat(2, 1fr); }
   .skills-layout { grid-template-columns: 1fr; }
   .timeline-layout { grid-template-columns: 1fr; }
   .timeline-tabs { grid-template-columns: repeat(5, minmax(150px, 1fr)); overflow-x: auto; padding-bottom: 8px; }
@@ -327,7 +313,7 @@ button { font: inherit; }
   .scroll-cue { display: none; }
   .section-heading { margin-bottom: 34px; }
   .section-heading h2 { font-size: clamp(2.15rem, 11vw, 3.2rem); }
-  .achievement-grid, .skills-cards, .certification-grid, .projects-grid, .articles-grid { grid-template-columns: 1fr; }
+  .achievement-grid, .skills-cards, .certification-grid, .projects-grid, .community-grid { grid-template-columns: 1fr; }
   .project-featured { grid-column: auto; }
   .achievement-card { min-height: auto; }
   .experience-panel ul { grid-template-columns: 1fr; }
