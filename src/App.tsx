@@ -85,7 +85,7 @@ function App() {
               </div>
               <dl className="hero-impact" aria-label="Professional profile highlights">
                 <div><dt>16+</dt><dd>Years of experience</dd></div>
-                <div><dt>4 engineers</dt><dd>Team leadership</dd></div>
+                <div><dt>Cross-market</dt><dd>Leadership scope</dd></div>
                 <div><dt>40%</dt><dd>Faster pipelines</dd></div>
                 <div><dt>99.9%</dt><dd>Integration uptime</dd></div>
               </dl>

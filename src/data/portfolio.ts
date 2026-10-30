@@ -26,8 +26,8 @@ export const profile = {
 
 export const achievements: Achievement[] = [
   {
-    title: 'Regional Data Delivery',
-    description: 'Delivered Hong Kong, Japan, and global PySpark/SQL pipelines with a REST API trigger and zero critical defects.',
+    title: 'Regional & Global Data Delivery',
+    description: 'Supported regional delivery in Hong Kong and Japan and a global High Net Worth initiative, partnering across markets on data quality and reliable integration.',
     icon: 'database',
   },
   {
@@ -37,12 +37,12 @@ export const achievements: Achievement[] = [
   },
   {
     title: 'Governed Data Engineering Assistant',
-    description: 'Developed an assistant for onboarding, metadata health, pipeline-run support, repository workflows, and code review with approval gates.',
+    description: 'Developed a governed engineering assistant that standardizes guidance for common data-platform workflows and keeps human approval in control of write actions.',
     icon: 'layers',
   },
   {
     title: 'Real-Time Data Architecture',
-    description: 'Designed and delivered the MM UIP CDC streaming architecture, recorded as the first streaming solution to go live without issues.',
+    description: 'Delivered production streaming workloads for real-time analytics with reliable, supportable engineering practices.',
     icon: 'cloud',
   },
   {
@@ -52,7 +52,7 @@ export const achievements: Achievement[] = [
   },
   {
     title: 'Engineering Leadership',
-    description: 'Led a four-person engineering team, coached peers through reviews, and enabled Copilot-assisted code review in CI.',
+    description: 'Enabled engineers through coaching, code review, and shared standards; helped teams adopt Copilot-assisted review in CI.',
     icon: 'users',
   },
 ];
@@ -84,11 +84,12 @@ export const experiences: Experience[] = [
     location: 'Hong Kong',
     summary: 'Leading Azure data engineering across insurance, global integration, platform modernization, and engineering enablement.',
     highlights: [
-      'Delivered Hong Kong, Japan, and global PySpark/SQL pipelines',
+      'Supported regional data delivery in Hong Kong and Japan and a global High Net Worth initiative',
+      'Delivered PySpark/SQL integration with zero critical defects',
       'Developed a governed data engineering assistant',
       'Led cross-market Oracle connector migration and regression testing',
       'Delivered the first Asia sales-enablement GenAI MVP',
-      'Led a four-person engineering team and coached peers',
+      'Provided technical guidance and code-review mentorship across teams',
     ],
     color: '#00A758',
   },
@@ -158,20 +159,20 @@ export const projects: Project[] = [
   {
     title: 'Governed Data Engineering Assistant',
     eyebrow: 'Engineering enablement',
-    summary: 'An approval-gated assistant that helps engineers with repeatable data-platform and repository workflows.',
-    challenge: 'Make common onboarding, metadata-health, pipeline-run, and code-review tasks easier to follow without bypassing governance.',
-    approach: 'Guide users through scoped checks and repository actions, with explicit approval before write operations.',
-    architecture: ['Engineer request', 'Context checks', 'Review guidance', 'Approved action'],
+    summary: 'A governed engineering assistant that makes common platform guidance and workflows easier to follow.',
+    challenge: 'Improve consistency for recurring data-engineering tasks while keeping people in control of changes.',
+    approach: 'Provide contextual guidance and scoped workflows, with explicit human approval before actions that change systems.',
+    architecture: ['Engineering question', 'Contextual guidance', 'Review and validation', 'Approved change'],
     technologies: ['Azure Data Factory', 'Azure Synapse', 'GitHub'],
   },
   {
     title: 'Regional Data Integration',
     eyebrow: 'Cross-market delivery',
-    summary: 'Regional and global pipelines for Hong Kong and Japan, described without exposing internal source-system details.',
-    challenge: 'Align schemas and data-quality expectations across regional teams and a shared global data lake.',
-    approach: 'Build PySpark and SQL curation workflows and a REST API trigger for the master pipeline, with validation and stakeholder review.',
-    architecture: ['Regional sources', 'PySpark/SQL curation', 'Master pipeline trigger', 'Global data lake'],
-    technologies: ['PySpark', 'SQL', 'REST API', 'Azure'],
+    summary: 'Cross-market data integration supporting regional business initiatives and a global High Net Worth programme.',
+    challenge: 'Align data definitions, quality expectations, and delivery across regional teams and shared global platforms.',
+    approach: 'Partner across engineering, architecture, and business teams on validated curation patterns for regional and global delivery.',
+    architecture: ['Regional inputs', 'Shared data definitions', 'Validation and curation', 'Global analytics'],
+    technologies: ['PySpark', 'SQL', 'Azure'],
   },
   {
     title: 'GenAI Sales Enablement Platform',
